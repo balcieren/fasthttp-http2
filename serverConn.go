@@ -25,7 +25,7 @@ const (
 	connStateClosed
 )
 
-func isClosed[T any](ch <-chan T) bool {
+func isClosed(ch <-chan *FrameHeader) bool {
 	select {
 	case <-ch:
 		return true
